@@ -22,7 +22,7 @@ export default function Home() {
           JavaScript Developer & Backend Developer.
         </p>
         <Link
-          href="#"
+          href="#contact"
           className=" w-fit px-5 py-3 text-[#7CFC00] border-4	border-[#7CFC00]  rounded-lg"
         >
           Contact Me

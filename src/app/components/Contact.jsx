@@ -21,8 +21,8 @@ export default function Contact() {
 
       <div className=" bg-[#554e4ef0] flex flex-col justify-center items-center gap-3 py-12">
         <div className=" flex flex-col sm:flex-row gap-3 sm:gap-6">
-            <div className="flex items-center justify-center gap-3 p-3 rounded border-2 border-[#7cfc00]"> <MdOutlineMarkEmailUnread /> <span>saifulislam@gamil.com</span></div>
-            <div className="flex items-center justify-center gap-3 p-3 rounded border-2 border-[#7cfc00]"> <IoCallOutline /> <span> +880 1611-337660</span></div>
+            <Link href='mailto:dev-saiful@outlook.com' className="flex items-center justify-center gap-3 p-3 rounded border-2 border-[#7cfc00]"> <MdOutlineMarkEmailUnread /> <span>dev-saiful@outlook.com</span></Link>
+            <Link href='https://wa.me/+8801611337660' target="_blank" className="flex items-center justify-center gap-3 p-3 rounded border-2 border-[#7cfc00]"> <IoCallOutline /> <span> +880 1611-337660</span></Link>
         </div>
         <div className="flex items-center justify-center gap-3 p-3 rounded border-2 border-[#7cfc00]">
             <IoLocationOutline />

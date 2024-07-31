@@ -8,12 +8,14 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const sidenav = () => setIsMenuOpen(false)
+  const sidenav = () => setIsMenuOpen(false);
 
   return (
     <div className="w-full fixed top-0 bg-[#333] z-50">
       <div className="max-w-screen-2xl mx-auto h-24 flex justify-between items-center px-6 md:px-12">
-        <h1 className="text-4xl font-semibold"><Link href='/'>Saiful Islam</Link></h1>
+        <h1 className="text-4xl font-semibold">
+          <Link href="/">Saiful Islam</Link>
+        </h1>
         <div className="block md:hidden">
           <button onClick={toggleMenu} className="text-2xl">
             {isMenuOpen ? (
@@ -39,13 +41,26 @@ export default function Navbar() {
           <Link onClick={sidenav} href="#contact">
             <span className="hover:text-gray-400 w-fit">Contact</span>
           </Link>
-          <Link onClick={sidenav} href="#" className=" md:hidden block w-fit hover:text-gray-400">
-            Scheduale
+          <Link
+            onClick={sidenav}
+            href="https://drive.google.com/file/d/1uphppbUFY0wiKEd7QVzvIzCJCL4FnGf2/view?usp=sharing
+"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" md:hidden block w-fit hover:text-gray-400"
+          >
+            Resume
           </Link>
         </div>
-        <span className="w-fit hidden md:block px-4 py-2 rounded-md text-[#333] font-medium text-lg bg-[#7cfc00]">
-          Scheduale
-        </span>
+        <Link
+          href="https://drive.google.com/file/d/1uphppbUFY0wiKEd7QVzvIzCJCL4FnGf2/view?usp=sharing
+"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-fit hidden md:block px-4 py-2 rounded-md text-[#333] font-medium text-lg bg-[#7cfc00]"
+        >
+          Resume
+        </Link>
       </div>
     </div>
   );
