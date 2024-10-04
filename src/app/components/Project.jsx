@@ -1,23 +1,31 @@
 import Card from "./Card";
 
 const items = [
-  "Item 1",
-  "Item 2",
-  "Item 3",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10",
-  "Item 4",
-  "Item 5",
-  "Item 6",
-  "Item 7",
-  "Item 8",
-  "Item 9",
-  "Item 10"
+  {
+    image: "/img.jpeg",
+    name: "Code Collab",
+    url: "/code-collab"
+  },
+  {
+    image: "/dice.jpg",
+    name: "Code Collab",
+        url: "/code-collab"
+  },
+  {
+    image: "/img.jpeg",
+    name: "Code Collab",
+        url: "/code-collab"
+  },
+  {
+    image: "/dice.jpg",
+    name: "Code Collab",
+        url: "/code-collab"
+  },
+  {
+    image: "/img.jpeg",
+    name: "Code Collab",
+        url: "/code-collab"
+  },
 ];
 
 export default function Project () {

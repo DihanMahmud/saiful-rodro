@@ -1,12 +1,12 @@
-import Image from "next/image";
 
-export default function Icon() {
+const Icon = ({ name, icon }) => {
   return (
-    <div className="hover:bg-[#7c7c7c] flex flex-col justify-center items-center p-5 gap-2 h-auto w-fit rounded-md bg-[#585757]">
-        
-        <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" height='50' width='50' />
-          
-        <h3>JavaScript</h3>
+    <div className="flex flex-col items-center bg-[#f8f8f8] p-5 rounded-lg">
+      <img src={icon} alt={name} className="h-12 w-12 bg-center bg-cover object-contain" />
+      <span className="text-center text-[#222] mt-2">{name}</span>
     </div>
-  )
-}
+  );
+};
+
+export default Icon;
+

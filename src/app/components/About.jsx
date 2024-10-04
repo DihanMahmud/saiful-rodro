@@ -1,7 +1,7 @@
 
 export default function About() {
   return (
-    <div id="about" className="max-w-screen-2xl bg-[#554e4ef0] mx-auto px-6 md:px-12 py-24 md:py-32">
+    <div id="about" className="max-w-screen-2xl bg-[#333] mx-auto px-6 md:px-12 py-24 md:py-32">
         <h1 className=" uppercase text-4xl sm:text-7xl text-[#7CFC00] pb-7">About</h1>
         <div className=" flex gap-3 ">
             <div className=" h-fit">
