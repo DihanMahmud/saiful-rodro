@@ -22,7 +22,7 @@ export default function Card({ items }) {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70 rounded-md"></div>
             <div className="absolute bottom-0 p-4 text-white z-10">
               <h3 className="text-lg font-bold line-clamp-1">{item.name}</h3> {/* Assuming each item has a name property */}
-              <Link href={`${item.url}`} className="inline-block px-4 py-2 mt-2 bg-white text-black rounded-md">
+              <Link href={`/${item.url}`} className="inline-block px-4 py-2 mt-2 bg-white text-black rounded-md">
                 Learn More
               </Link>
             </div>
