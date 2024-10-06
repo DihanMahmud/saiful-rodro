@@ -33,16 +33,16 @@ export default function Home() {
         <div className=" absolute bottom-14 right-0 flex flex-col justify-center items-center gap-3">
         {" "}
         <span className=" inline-block h-16 w-1 bg-[#7cfc00] rounded"></span>
-        <Link href="#">
+        <Link href="https://www.facebook.com/jsdev.saiful" target='_blank'>
           <FaFacebook size={24} />{" "}
         </Link>
-        <Link href="#">
+        <Link href="https://x.com/dev_saiful" target='_blank'>
           <FaSquareXTwitter size={24} />{" "}
         </Link>
-        <Link href="#">
+        <Link href="https://www.linkedin.com/in/dev-saiful/" target='_blank'>
           <FaLinkedin size={24} />{" "}
         </Link>
-        <Link href="#">
+        <Link href="https://github.com/dev-saiful" target='_blank'>
           <FaGithub size={24} />{" "}
         </Link>
       </div>

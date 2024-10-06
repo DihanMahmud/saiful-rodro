@@ -2,54 +2,54 @@ import Card from "./Card";
 
 const items = [
   {
-    image: "/img.jpeg",
+    image: "/IteliTalk.png",
     name: "InteliTalk",
     url: "intelitalk",
   },
   {
-    image: "/dice.jpg",
+    image: "/CodeCollab.png",
     name: "Code Collab",
     url: "code-collab",
   },
   {
-    image: "/img.jpeg",
+    image: "/nasstore.png",
     name: "NasStore",
     url: "nasstore",
   },
   {
-    image: "/dice.jpg",
+    image: "/NasaAPI.png",
     name: "NASA Mission Control",
     url: "nasa-mission-control",
   },
   {
-    image: "/img.jpeg",
+    image: "/shoppingCart.png",
     name: "Basic Shopping Cart",
     url: "basic-shopping-cart",
   },
   {
     url: "travel-recommendation-website",
     name: "Travel Recommendation Website",
-    image: "/img.jpeg",
+    image: "/laptop.png",
   },
   {
     url: "health-census-website",
     name: "Health Census Website",
-    image: "/img.jpeg",
+    image: "/health.png",
   },
   {
     url: "tasklist",
     name: "TaskList",
-    image: "/img.jpeg",
+    image: "/tasklist.png",
   },
   {
-    url: "profile-scroller",
-    name: "Profile Scroller",
-    image: "/img.jpeg",
+    url: "loan-calculator",
+    name: "Loan Calculator",
+    image: "/loan.png",
   },
   {
     url: "robofriends",
     name: "RoboFriends",
-    image: "/img.jpeg",
+    image: "/robofriends.png",
   },
   {
     url: "number-guessing-game",
@@ -57,8 +57,8 @@ const items = [
     image: "/img.jpeg",
   },
   {
-    url: "loan-calculator",
-    name: "Loan Calculator",
+    url: "profile-scroller",
+    name: "Profile Scroller",
     image: "/img.jpeg",
   },
 ];
