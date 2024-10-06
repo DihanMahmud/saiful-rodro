@@ -2,6 +2,7 @@ import Icon from "./Icon";
 
 const skills = [
   { name: "Azure", icon: "/azure.svg" },
+  { name: "AWS", icon: "/aws.svg" },
   { name: "C++", icon: "/cpp.svg" },
   { name: "CSS", icon: "/css.svg" },
   { name: "Docker", icon: "/docker.png" },
