@@ -11,7 +11,7 @@ export default function Navbar() {
   const sidenav = () => setIsMenuOpen(false);
 
   return (
-    <div className="w-full fixed top-0 bg-[#333] z-50">
+    <div className="w-full fixed top-0 bg-[#222] z-50">
       <div className="max-w-screen-2xl mx-auto h-24 flex justify-between items-center px-6 md:px-12">
         <h1 className="text-4xl font-semibold">
           <Link href="/">Saiful Islam</Link>
