@@ -129,18 +129,6 @@ export const projects = [
       github: "https://github.com/dev-saiful/robofriends"
     }, 
     {
-      url: "number-guessing-game",
-      name: "Number Guessing Game",
-      description: "The Number Guessing Game is a fun web project built using HTML, CSS, and JavaScript. Players try to guess a randomly generated number within a certain range, receiving feedback on whether their guesses are too high or too low.",
-      features: [
-        "Random number generation for each game round",
-        "User-friendly interface with clear instructions",
-        "Feedback on each guess (too high, too low, correct)",
-      ],
-      liveDemo: "https://dev-saiful.github.io/Number-Guessing-Game",
-      github: "https://github.com/dev-saiful/Number-Guessing-Game"
-    },           
-    {
       url: "loan-calculator",
       name: "Loan Calculator",
       description: "The Loan Calculator is a web application built using HTML, CSS, and JavaScript that allows users to calculate monthly loan payments based on the loan amount, interest rate, and loan term. It provides a user-friendly interface for quick calculations.",
@@ -152,7 +140,19 @@ export const projects = [
       ],
       liveDemo: "https://dev-saiful.github.io/LoanCalculator",
       github: "https://github.com/dev-saiful/LoanCalculator"
-    }
+    },
+    {
+      url: "number-guessing-game",
+      name: "Number Guessing Game",
+      description: "The Number Guessing Game is a fun web project built using HTML, CSS, and JavaScript. Players try to guess a randomly generated number within a certain range, receiving feedback on whether their guesses are too high or too low.",
+      features: [
+        "Random number generation for each game round",
+        "User-friendly interface with clear instructions",
+        "Feedback on each guess (too high, too low, correct)",
+      ],
+      liveDemo: "https://dev-saiful.github.io/Number-Guessing-Game",
+      github: "https://github.com/dev-saiful/Number-Guessing-Game"
+    },           
     
     
                 

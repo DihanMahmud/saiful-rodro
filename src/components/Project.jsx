@@ -2,9 +2,9 @@ import Card from "./Card";
 
 const items = [
   {
-    image: "/IteliTalk.png",
-    name: "InteliTalk",
-    url: "intelitalk",
+    image: "/NasaAPI.png",
+    name: "NASA Mission Control",
+    url: "nasa-mission-control",
   },
   {
     image: "/CodeCollab.png",
@@ -17,9 +17,9 @@ const items = [
     url: "nasstore",
   },
   {
-    image: "/NasaAPI.png",
-    name: "NASA Mission Control",
-    url: "nasa-mission-control",
+    image: "/IteliTalk.png",
+    name: "InteliTalk",
+    url: "intelitalk",
   },
   {
     image: "/shoppingCart.png",
