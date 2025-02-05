@@ -39,3 +39,9 @@ body{
 .down{
   transform: translateY(-50%);
 }
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}

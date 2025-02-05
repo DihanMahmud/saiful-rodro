@@ -22,7 +22,7 @@ const skills = [
 export default function Skills() {
   return (
     <div className="max-w-screen-2xl mx-auto px-6 pt-12 md:px-12">
-      <h1 className="text-center uppercase text-4xl sm:text-7xl text-[#7CFC00] pb-7">My Skills</h1>
+      <h1 className="text-center uppercase text-2xl sm:text-4xl text-[#7CFC00] pb-7">My Skills</h1>
       <div className="flex flex-col justify-center items-center gap-6">
         {Array.from({ length: Math.ceil(skills.length / 5) }).map((_, index) => (
           <div key={index} className="flex gap-7 lg:flex-nowrap flex-wrap justify-center">

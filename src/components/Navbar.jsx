@@ -35,6 +35,9 @@ export default function Navbar() {
           <Link onClick={sidenav} href="#about">
             <span className="hover:text-gray-400 w-fit">About</span>
           </Link>
+          <Link onClick={sidenav} href="/blog">
+            <span className="hover:text-gray-400 w-fit">Blog</span>
+          </Link>
           <Link onClick={sidenav} href="#portfolio">
             <span className="hover:text-gray-400 w-fit">Portfolio</span>
           </Link>
