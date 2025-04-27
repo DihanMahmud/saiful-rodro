@@ -13,15 +13,15 @@ export default function Navbar() {
   return (
     <div className="w-full fixed top-0 bg-[#222] z-50">
       <div className="max-w-screen-2xl mx-auto h-24 flex justify-between items-center px-6 md:px-12">
-        <h1 className="text-4xl font-semibold">
+        <h1 className="text-xl sm:text-3xl lg:text-4xl font-semibold">
           <Link href="/">Saiful Islam</Link>
         </h1>
         <div className="block md:hidden">
           <button onClick={toggleMenu} className="text-2xl">
             {isMenuOpen ? (
-              <MdOutlineCancel className=" relative z-20 text-3xl" />
+              <MdOutlineCancel className=" relative z-20 text-xl sm:text-3xl" />
             ) : (
-              <CiMenuFries className=" text-3xl" />
+              <CiMenuFries className="text-xl sm:text-3xl" />
             )}
           </button>
         </div>
@@ -40,6 +40,9 @@ export default function Navbar() {
           </Link>
           <Link onClick={sidenav} href="#portfolio">
             <span className="hover:text-gray-400 w-fit">Portfolio</span>
+          </Link>
+          <Link onClick={sidenav} href="#services">
+            <span className="hover:text-gray-400 w-fit">Services</span>
           </Link>
           <Link onClick={sidenav} href="#contact">
             <span className="hover:text-gray-400 w-fit">Contact</span>

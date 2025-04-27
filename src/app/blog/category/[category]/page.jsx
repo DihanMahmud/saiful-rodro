@@ -13,6 +13,7 @@ export const revalidate = 0
 
 export default async function CategoryPage({ params }) {
   const category = params.category
+  
   const [posts, categories] = await Promise.all([getPostsByCategory(category), getCategories()])
 
   return (

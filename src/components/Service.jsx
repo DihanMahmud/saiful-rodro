@@ -80,7 +80,7 @@ const services = [
 
 export default function Service() {
   return (
-    <section className="max-w-screen-2xl mx-auto px-6 pb-12 md:px-12 text-gray-100">
+    <section className="max-w-screen-2xl mx-auto px-6 pb-12 md:px-12 text-gray-100 pt-24" id="services">
       <div className="mx-auto">
       <h1 className="text-center uppercase text-2xl sm:text-4xl text-[#7CFC00] pb-7">Services & Pricing</h1>
 

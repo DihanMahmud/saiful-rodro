@@ -4,6 +4,7 @@ const skills = [
   { name: "Azure", icon: "/azure.svg" },
   { name: "AWS", icon: "/aws.svg" },
   { name: "C++", icon: "/cpp.svg" },
+  { name: "Golang", icon: "/golang.svg" },
   { name: "CSS", icon: "/css.svg" },
   { name: "Docker", icon: "/docker.png" },
   { name: "Express", icon: "/express.svg" },

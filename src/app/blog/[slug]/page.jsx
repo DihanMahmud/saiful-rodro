@@ -111,6 +111,8 @@ const ptComponents = {
 export default async function BlogPost({ params }) {
   const post = await getPost(params.slug)
 
+  
+
   if (!post) {
     return <div>Post not found</div>
   }
