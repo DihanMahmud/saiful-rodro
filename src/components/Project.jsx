@@ -67,7 +67,7 @@ export default function Project() {
   return (
     <div
       id="portfolio"
-      className="max-w-screen-2xl px-6 md:px-12 mx-auto py-24"
+      className="max-w-screen-2xl px-6 md:px-12 mx-auto pt-24"
     >
       <h1 className=" uppercase pb-12 text-2xl sm:text-4xl text-center text-[#7cfc00]">
         Portfolio

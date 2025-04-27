@@ -29,7 +29,7 @@ export default function Home() {
         </Link>
       </div>
       <div className="w-full relative sm:w-1/2">
-        <Image src={saiful} className="height object-cover"></Image>
+        <Image src={saiful} alt="Saiful-Islam" className="height object-cover"></Image>
         <div className=" absolute bottom-14 right-0 flex flex-col justify-center items-center gap-3">
         {" "}
         <span className=" inline-block h-16 w-1 bg-[#7cfc00] rounded"></span>
