@@ -166,30 +166,27 @@
 //   },
 // ];
 
-
-
-
 export const projects = [
   {
     url: "intelitalk",
     name: "InteliTalk",
     description:
-      "InteliTalk is a chatbot built for university environments. It is developed using the MERN stack, Langchain, OpenAI API, CI/CD pipeline, Docker, and hosted on Render. The backend system was developed to ensure seamless communication and data handling.",
+      "InteliTalk is a chatbot built for university environments. It is developed using the MERN stack, Langchain, OpenAI API, CI/CD pipeline, Docker, and hosted on Koyeb. The backend system was developed to ensure seamless communication and data handling.",
     features: [
       "University environment-specific Q&A system",
       "Integration with OpenAI for advanced conversational capabilities",
       "Continuous integration and deployment (CI/CD) with Docker for scalable deployment",
     ],
-    liveDemo: "https://intelitalk.onrender.com",
+    liveDemo: "https://federal-annelise-sadman-shaon-27640c2a.koyeb.app/",
     github: "https://github.com/dev-saiful/InteliTalk",
     user: {
-      email: "user@intelitalk.com",
-      password: "user123"
+      email: "sadman@gmail.com",
+      password: "123456",
     },
     admin: {
-      email: "admin@intelitalk.com",
-      password: "admin123"
-    }
+      email: "saiful@gmail.com",
+      password: "654321",
+    },
   },
   {
     url: "code-collab",
@@ -206,13 +203,13 @@ export const projects = [
     liveDemo: "https://codecollab-ochre.vercel.app",
     github: "https://github.com/dev-saiful/codecolab-server",
     user: {
-      email: "user@codecollab.com",
-      password: "user123"
+      email: "saifulsmedia@gmail.com",
+      password: "12345678",
     },
-    admin: {
-      email: "admin@codecollab.com",
-      password: "admin123"
-    }
+    // admin: {
+    //   email: "admin@codecollab.com",
+    //   password: "admin123",
+    // },
   },
   {
     url: "nasstore",
@@ -225,17 +222,19 @@ export const projects = [
       "User authentication and profile management",
       "Order processing and tracking",
       "Payment gateway integration",
+      "Paypal Email : jhony@personal.example.com",
+      "Paypal PassWord: 12345678",
     ],
     liveDemo: "https://nasstore.vercel.app",
     github: "https://github.com/dev-saiful/nasShop-server",
     user: {
-      email: "user@nasstore.com",
-      password: "user123"
+      email: "david@gmail.com",
+      password: "1234",
     },
     admin: {
-      email: "admin@nasstore.com",
-      password: "admin123"
-    }
+      email: "mh@gmail.com",
+      password: "123",
+    },
   },
   {
     url: "nasa-mission-control",
@@ -249,16 +248,16 @@ export const projects = [
       "CI/CD pipeline for continuous deployment",
       "Docker containerization for scalable infrastructure",
     ],
-    liveDemo: "https://live-demo-nasa-mission-control.com",
+    liveDemo: "http://13.60.222.201:8000/",
     github: "https://github.com/dev-saiful/Nasa_Project",
-    user: {
-      email: "user@nasa.com",
-      password: "user123"
-    },
-    admin: {
-      email: "admin@nasa.com",
-      password: "admin123"
-    }
+    // user: {
+    //   email: "user@nasa.com",
+    //   password: "user123",
+    // },
+    // admin: {
+    //   email: "admin@nasa.com",
+    //   password: "admin123",
+    // },
   },
   {
     url: "basic-shopping-cart",
@@ -272,14 +271,14 @@ export const projects = [
     ],
     liveDemo: "https://shopping-cart-ashy-delta.vercel.app",
     github: "https://github.com/dev-saiful/shopping-cart",
-    user: {
-      email: "user@cart.com",
-      password: "user123"
-    },
-    admin: {
-      email: "admin@cart.com",
-      password: "admin123"
-    }
+    // user: {
+    //   email: "user@cart.com",
+    //   password: "user123",
+    // },
+    // admin: {
+    //   email: "admin@cart.com",
+    //   password: "admin123",
+    // },
   },
   {
     url: "travel-recommendation-website",
@@ -292,14 +291,14 @@ export const projects = [
     ],
     liveDemo: "https://dev-saiful.github.io/travel_recomendation/",
     github: "https://github.com/dev-saiful/travel_recomendation",
-    user: {
-      email: "user@travel.com",
-      password: "user123"
-    },
-    admin: {
-      email: "admin@travel.com",
-      password: "admin123"
-    }
+    // user: {
+    //   email: "user@travel.com",
+    //   password: "user123",
+    // },
+    // admin: {
+    //   email: "admin@travel.com",
+    //   password: "admin123",
+    // },
   },
   {
     url: "health-census-website",
@@ -314,14 +313,14 @@ export const projects = [
     ],
     liveDemo: "https://dev-saiful.github.io/heath_census",
     github: "https://github.com/dev-saiful/heath_census",
-    user: {
-      email: "user@health.com",
-      password: "user123"
-    },
-    admin: {
-      email: "admin@health.com",
-      password: "admin123"
-    }
+    // user: {
+    //   email: "user@health.com",
+    //   password: "user123",
+    // },
+    // admin: {
+    //   email: "admin@health.com",
+    //   password: "admin123",
+    // },
   },
   {
     url: "tasklist",
@@ -349,10 +348,10 @@ export const projects = [
     ],
     liveDemo: "https://dev-saiful.github.io/profile_scroller",
     github: "https://github.com/dev-saiful/profile_scroller",
-    user: {
-      email: "user@profiles.com",
-      password: "user123"
-    },
+    // user: {
+    //   email: "user@profiles.com",
+    //   password: "user123",
+    // },
   },
   {
     url: "robofriends",
@@ -367,14 +366,14 @@ export const projects = [
     ],
     liveDemo: "https://dev-saiful.github.io/robofriends",
     github: "https://github.com/dev-saiful/robofriends",
-    user: {
-      email: "user@robots.com",
-      password: "user123"
-    },
-    admin: {
-      email: "admin@robots.com",
-      password: "admin123"
-    }
+    // user: {
+    //   email: "user@robots.com",
+    //   password: "user123",
+    // },
+    // admin: {
+    //   email: "admin@robots.com",
+    //   password: "admin123",
+    // },
   },
   {
     url: "loan-calculator",
@@ -402,13 +401,13 @@ export const projects = [
     ],
     liveDemo: "https://dev-saiful.github.io/Number-Guessing-Game",
     github: "https://github.com/dev-saiful/Number-Guessing-Game",
-    user: {
-      email: "user@game.com",
-      password: "user123"
-    },
-    admin: {
-      email: "admin@game.com",
-      password: "admin123"
-    }
+    // user: {
+    //   email: "user@game.com",
+    //   password: "user123",
+    // },
+    // admin: {
+    //   email: "admin@game.com",
+    //   password: "admin123",
+    // },
   },
 ];
