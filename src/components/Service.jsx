@@ -10,30 +10,30 @@ const services = [
     title: "Full-Stack Development",
     description: "End-to-end web application development using modern technologies.",
     icon: <Globe className="h-8 w-8 text-white" />,
-    skills: ["JavaScript (ES6)", "React", "Next.js", "Node.js", "Express.js"],
+    skills: ["JavaScript (ES6)", "React", "Remix", "Next.js", "Node.js", "Express.js", "NestJS", "MongoDB", "PostgreSQL"],
     pricing: {
-      hourly: "$75",
-      project: "From $5,000",
+      hourly: "$30",
+      project: "From $800",
     },
   },
   {
     title: "Frontend Specialization",
     description: "Creating responsive and interactive user interfaces.",
     icon: <Layout className="h-8 w-8 text-white" />,
-    skills: ["HTML", "CSS", "Tailwind CSS", "React", "Redux Toolkit"],
+    skills: ["HTML", "CSS", "Tailwind CSS", "React", "Remix", "Next.js", "React Router", "Redux Toolkit"],
     pricing: {
-      hourly: "$65",
-      project: "From $3,000",
+      hourly: "$25",
+      project: "From $500",
     },
   },
   {
     title: "Backend Development",
     description: "Building robust server-side applications and APIs.",
     icon: <Server className="h-8 w-8 text-white" />,
-    skills: ["Node.js", "Express.js", "C++", "Go", "MongoDB", "PostgreSQL"],
+    skills: ["Node.js", "Express.js", "NestJS", "MongoDB", "PostgreSQL", "Prisma"],
     pricing: {
-      hourly: "$80",
-      project: "From $4,000",
+      hourly: "$40",
+      project: "From $1,000",
     },
   },
   {
@@ -42,28 +42,28 @@ const services = [
     icon: <Database className="h-8 w-8 text-white" />,
     skills: ["MongoDB", "PostgreSQL", "MySQL", "Prisma", "Mongoose"],
     pricing: {
-      hourly: "$70",
-      project: "From $2,500",
+      hourly: "$30",
+      project: "From $600",
     },
   },
   {
     title: "DevOps & Deployment",
     description: "Streamlining development processes and managing deployments.",
     icon: <Wrench className="h-8 w-8 text-white" />,
-    skills: ["Git", "Docker", "CI/CD", "Microsoft Azure", "Vercel", "Netlify"],
+    skills: ["Git", "GitHub", "Docker", "CI/CD", "Github Actions", "AWS", "Microsoft Azure", "Vercel", "Netlify", "Render", "DigitalOcean"],
     pricing: {
-      hourly: "$85",
-      project: "From $3,500",
+      hourly: "$30",
+      project: "From $900",
     },
   },
   {
     title: "AI Integration",
     description: "Incorporating AI capabilities into software solutions.",
     icon: <Code2 className="h-8 w-8 text-white" />,
-    skills: ["OpenAI", "Langchain", "Custom AI Solutions"],
+    skills: ["OpenAI", "DeepSeek", "Gemini", "Langchain", "Custom AI Solutions"],
     pricing: {
-      hourly: "$100",
-      project: "From $6,000",
+      hourly: "$40",
+      project: "From $1,000",
     },
   },
   {
@@ -72,8 +72,8 @@ const services = [
     icon: <Cpu className="h-8 w-8 text-white" />,
     skills: ["Go", "Node.js", "Docker", "Kubernetes", "API Gateway"],
     pricing: {
-      hourly: "$90",
-      project: "From $7,000",
+      hourly: "$50",
+      project: "From $1,500",
     },
   },
 ]
