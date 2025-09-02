@@ -168,27 +168,6 @@
 
 export const projects = [
   {
-    url: "intelitalk",
-    name: "InteliTalk",
-    description:
-      "InteliTalk is a chatbot built for university environments. It is developed using the MERN stack, Langchain, OpenAI API, CI/CD pipeline, Docker, and hosted on Koyeb. The backend system was developed to ensure seamless communication and data handling.",
-    features: [
-      "University environment-specific Q&A system",
-      "Integration with OpenAI for advanced conversational capabilities",
-      "Continuous integration and deployment (CI/CD) with Docker for scalable deployment",
-    ],
-    liveDemo: "https://federal-annelise-sadman-shaon-27640c2a.koyeb.app/",
-    github: "https://github.com/dev-saiful/InteliTalk",
-    user: {
-      email: "sadman@gmail.com",
-      password: "123456",
-    },
-    admin: {
-      email: "saiful@gmail.com",
-      password: "654321",
-    },
-  },
-  {
     url: "code-collab",
     name: "CodeCollab",
     description:
@@ -237,6 +216,27 @@ export const projects = [
     },
   },
   {
+    url: "intelitalk",
+    name: "InteliTalk",
+    description:
+      "InteliTalk is a chatbot built for university environments. It is developed using the MERN stack, Langchain, OpenAI API, CI/CD pipeline, Docker, and hosted on Koyeb. The backend system was developed to ensure seamless communication and data handling.",
+    features: [
+      "University environment-specific Q&A system",
+      "Integration with OpenAI for advanced conversational capabilities",
+      "Continuous integration and deployment (CI/CD) with Docker for scalable deployment",
+    ],
+    liveDemo: "https://youtu.be/R0p2bsoRuso?si=lbnyavn_ZTtBvFnk",
+    github: "https://github.com/dev-saiful/InteliTalk",
+    user: {
+      email: "sadman@gmail.com",
+      password: "123456",
+    },
+    admin: {
+      email: "saiful@gmail.com",
+      password: "654321",
+    },
+  },
+  {
     url: "nasa-mission-control",
     name: "NASA Mission Control",
     description:
@@ -248,7 +248,7 @@ export const projects = [
       "CI/CD pipeline for continuous deployment",
       "Docker containerization for scalable infrastructure",
     ],
-    liveDemo: "http://13.60.222.201:8000/",
+    liveDemo: "https://accused-barbee-sadman-shaon-51afef37.koyeb.app",
     github: "https://github.com/dev-saiful/Nasa_Project",
     // user: {
     //   email: "user@nasa.com",
