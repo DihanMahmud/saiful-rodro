@@ -1,10 +1,20 @@
-import { Poppins } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
- 
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
+});
+
 const poppins = Poppins({
-  weight: '400',
-  subsets: ['latin'],
-})
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  preload: true,
+});
 
 export const metadata = {
   title: "Saiful Islam | Backend Developer",
@@ -13,8 +23,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+      <body
+        className={`${inter.className} antialiased bg-gradient-to-br from-[#222] via-[#1a1a1a] to-[#222]`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
