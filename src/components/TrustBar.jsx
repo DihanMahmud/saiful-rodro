@@ -36,20 +36,20 @@ function Counter({ value, suffix = "", duration = 1.4 }) {
 }
 
 // =========================================================
-// Tech Logos — placeholder text logos for technologies used.
+// Tech Logos — SVG icons for technologies used.
 // Greyscale → brand color on hover.
 // =========================================================
 const techLogos = [
-  "Node.js",
-  "Python",
-  "LangChain",
-  "OpenAI",
-  "PostgreSQL",
-  "MongoDB",
-  "Docker",
-  "AWS",
-  "Next.js",
-  "TypeScript",
+  { name: "Node.js", src: "/nodejs.svg" },
+  { name: "Next.js", src: "/next.svg" },
+  { name: "Express", src: "/express.svg" },
+  { name: "PostgreSQL", src: "/postgresql.svg" },
+  { name: "MongoDB", src: "/mongodb.svg" },
+  { name: "AWS", src: "/aws.svg" },
+  { name: "Docker", src: "/docker.png" },
+  { name: "GitHub", src: "/github.svg" },
+  { name: "Git", src: "/git.svg" },
+  { name: "Prisma", src: "/prisma.svg" },
 ];
 
 function TechMarquee() {
@@ -65,16 +65,20 @@ function TechMarquee() {
           "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
       }}
     >
-      <div className="flex w-max animate-marquee gap-12 py-2">
-        {items.map((name, i) => (
+      <div className="flex w-max animate-marquee gap-10 py-2">
+        {items.map((tech, i) => (
           <div
-            key={`${name}-${i}`}
-            className="flex shrink-0 items-center gap-2 text-ink-subtle transition-colors duration-300 hover:text-brand"
+            key={`${tech.name}-${i}`}
+            className="flex shrink-0 items-center gap-2.5 rounded-lg border border-border bg-surface/80 px-3 py-2 transition-colors duration-300 hover:border-brand/40 hover:bg-brand/5"
           >
-            <div className="grid h-7 w-7 place-items-center rounded-md border border-border bg-surface-2 text-[10px] font-bold">
-              {name.charAt(0)}
-            </div>
-            <span className="text-sm font-medium tracking-tight">{name}</span>
+            <img
+              src={tech.src}
+              alt={tech.name}
+              className="h-6 w-6 object-contain grayscale transition-all duration-300 hover:grayscale-0"
+            />
+            <span className="text-sm font-medium text-ink-muted transition-colors duration-300 hover:text-brand">
+              {tech.name}
+            </span>
           </div>
         ))}
       </div>
