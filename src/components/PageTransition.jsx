@@ -14,32 +14,31 @@ const pageTransition = {
   duration: 0.3,
 };
 
-const LoadingSpinner = () => (
-  <motion.div
-    className="fixed inset-0 bg-gradient-to-br from-[#222] via-[#1a1a1a] to-[#222] flex items-center justify-center z-50"
+const LoadingSpinner = () => (    <motion.div
+    className="fixed inset-0 bg-bg flex items-center justify-center z-50"
     initial={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     transition={{ duration: 0.2 }}
   >
     <div className="relative">
       <motion.div
-        className="w-16 h-16 border-4 border-gray-600 border-t-[#7cfc00] rounded-full"
+        className="w-16 h-16 border-4 border-border border-t-brand rounded-full"
         animate={{ rotate: 360 }}
         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
       />
       <motion.div
-        className="absolute inset-2 w-8 h-8 border-2 border-gray-700 border-b-[#7cfc00] rounded-full"
+        className="absolute inset-2 w-8 h-8 border-2 border-border-strong border-b-brand rounded-full"
         animate={{ rotate: -360 }}
         transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
       />
       <motion.div
-        className="absolute inset-6 w-4 h-4 bg-[#7cfc00] rounded-full"
+        className="absolute inset-6 w-4 h-4 bg-brand rounded-full"
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 1, repeat: Infinity }}
       />
     </div>
     <motion.p
-      className="absolute mt-24 text-[#7cfc00] font-semibold"
+      className="absolute mt-24 text-brand font-semibold"
       animate={{ opacity: [1, 0.5, 1] }}
       transition={{ duration: 1.5, repeat: Infinity }}
     >
@@ -82,7 +81,7 @@ const ScrollProgress = () => {
       transition={{ duration: 0.3 }}
     >
       <motion.div
-        className="h-full bg-gradient-to-r from-[#7cfc00] to-[#5dd400]"
+        className="h-full bg-gradient-to-r from-brand to-brand-hover"
         style={{ width: `${scrollProgress}%` }}
         transition={{ duration: 0.1 }}
       />
@@ -114,7 +113,7 @@ export default function PageTransition({ children }) {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-[#222] via-[#1a1a1a] to-[#222] min-h-screen">
+    <div className="bg-bg min-h-screen">
       <ScrollProgress />
       <AnimatePresence mode="wait">
         {isLoading ? (

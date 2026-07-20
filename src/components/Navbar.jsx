@@ -1,4 +1,5 @@
 "use client";
+
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { memo, useCallback, useEffect, useMemo, useState } from "react";
@@ -7,21 +8,14 @@ import { MdOutlineCancel } from "react-icons/md";
 
 const menuVariants = {
   closed: {
-    x: "100%",
     opacity: 0,
-    transition: {
-      type: "tween",
-      duration: 0.3,
-      ease: "easeInOut",
-    },
+    transition: { duration: 0.2, ease: "easeOut" },
   },
   open: {
-    x: "0%",
     opacity: 1,
     transition: {
-      type: "tween",
-      duration: 0.3,
-      ease: "easeInOut",
+      duration: 0.25,
+      ease: "easeOut",
       staggerChildren: 0.05,
       delayChildren: 0.1,
     },
@@ -29,31 +23,20 @@ const menuVariants = {
 };
 
 const linkVariants = {
-  closed: {
-    x: 20,
-    opacity: 0,
-  },
+  closed: { y: 12, opacity: 0 },
   open: {
-    x: 0,
+    y: 0,
     opacity: 1,
-    transition: {
-      type: "tween",
-      duration: 0.2,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.25, ease: "easeOut" },
   },
 };
 
 const navbarVariants = {
-  hidden: { y: -100, opacity: 0 },
+  hidden: { y: -32, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    transition: {
-      type: "tween",
-      duration: 0.4,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
@@ -62,14 +45,12 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = useCallback(() => {
-    const isScrolled = window.scrollY > 10;
-    setScrolled(isScrolled);
+    setScrolled(window.scrollY > 12);
   }, []);
 
   useEffect(() => {
     let ticking = false;
-
-    const optimizedHandleScroll = () => {
+    const optimized = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           handleScroll();
@@ -78,169 +59,145 @@ const Navbar = () => {
         ticking = true;
       }
     };
-
-    window.addEventListener("scroll", optimizedHandleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", optimizedHandleScroll);
+    window.addEventListener("scroll", optimized, { passive: true });
+    return () => window.removeEventListener("scroll", optimized);
   }, [handleScroll]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   const toggleMenu = useCallback(
-    () => setIsMenuOpen(!isMenuOpen),
-    [isMenuOpen]
+    () => setIsMenuOpen((v) => !v),
+    []
   );
   const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
   const navLinks = useMemo(
     () => [
       { href: "#about", label: "About" },
-      { href: "#portfolio", label: "Portfolio" },
       { href: "#services", label: "Services" },
+      { href: "#work", label: "Work" },
+      { href: "#process", label: "Process" },
+      { href: "#pricing", label: "Pricing" },
       { href: "#contact", label: "Contact" },
-      { href: "/blog", label: "Blog" },
     ],
     []
   );
 
-  const mobileNavLinks = useMemo(
-    () => [
-      ...navLinks,
-      {
-        href: "https://drive.google.com/file/d/1uphppbUFY0wiKEd7QVzvIzCJCL4FnGf2/view?usp=sharing",
-        label: "Resume",
-        external: true,
-      },
-    ],
-    [navLinks]
-  );
-
   return (
-    <motion.div
-      className={`w-full fixed top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#222]/95 backdrop-blur-md shadow-lg" : "bg-[#222]"
-      }`}
+    <motion.header
       variants={navbarVariants}
       initial="hidden"
       animate="visible"
-      style={{ willChange: "transform" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-elegant ${
+        scrolled
+          ? "bg-bg/85 backdrop-blur-md border-b border-border"
+          : "bg-transparent"
+      }`}
     >
-      <div className="max-w-screen-2xl mx-auto h-24 flex justify-between items-center px-6 md:px-12">
-        <motion.h1
-          className="text-xl sm:text-3xl lg:text-4xl font-semibold"
-          whileHover={{
-            scale: 1.05,
-            textShadow: "0 0 20px rgba(124, 252, 0, 0.5)",
-          }}
-          transition={{ type: "tween", duration: 0.2 }}
-          style={{ willChange: "transform" }}
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12">
+        {/* Brand mark + wordmark */}
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 text-ink transition-opacity duration-200 hover:opacity-80"
         >
-          <Link href="/">Saiful Islam</Link>
-        </motion.h1>
-        <div className="block md:hidden">
-          <motion.button
-            onClick={toggleMenu}
-            className="text-2xl relative z-50"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.1 }}
-            style={{ willChange: "transform" }}
+          <span
+            aria-hidden
+            className="grid h-8 w-8 place-items-center rounded-md bg-brand text-brand-fg text-sm font-bold"
           >
-            <motion.div
-              animate={isMenuOpen ? { rotate: 180 } : { rotate: 0 }}
-              transition={{ duration: 0.2 }}
-              style={{ willChange: "transform" }}
-            >
-              {isMenuOpen ? (
-                <MdOutlineCancel className="text-xl sm:text-3xl text-[#7cfc00]" />
-              ) : (
-                <CiMenuFries className="text-xl sm:text-3xl" />
-              )}
-            </motion.div>
-          </motion.button>
-        </div>
+            SI
+          </span>
+          <span className="text-lg font-semibold tracking-tight">
+            Saiful Islam
+          </span>
+        </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-5 font-medium">
-          {navLinks.map((link, index) => (
-            <motion.div
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-8 md:flex">
+          {navLinks.map((link) => (
+            <Link
               key={link.href}
-              whileHover={{ y: -2 }}
-              transition={{ type: "tween", duration: 0.2 }}
-              style={{ willChange: "transform" }}
+              href={link.href}
+              className="link-underline text-sm font-medium text-ink-muted hover:text-ink"
             >
-              <Link href={link.href}>
-                <span className="hover:text-[#7cfc00] transition-colors duration-300 relative">
-                  {link.label}
-                  <motion.div
-                    className="absolute -bottom-1 left-0 h-0.5 bg-[#7cfc00]"
-                    initial={{ width: 0 }}
-                    whileHover={{ width: "100%" }}
-                    transition={{ duration: 0.2 }}
-                    style={{ willChange: "width" }}
-                  />
-                </span>
-              </Link>
-            </motion.div>
+              {link.label}
+            </Link>
           ))}
+        </nav>
+
+        {/* Desktop CTA */}
+        <div className="hidden md:block">
+          <Link href="#contact" className="btn-primary px-5 py-2.5 text-sm">
+            Book a Consultation
+            <span aria-hidden>→</span>
+          </Link>
         </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              variants={menuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="absolute top-0 w-2/3 h-screen bg-[#111]/95 right-0 flex flex-col items-center justify-center text-xl backdrop-blur-lg md:hidden"
-              style={{ willChange: "transform" }}
-            >
-              <motion.div className="flex flex-col gap-8 items-center">
-                {mobileNavLinks.map((link, index) => (
-                  <motion.div
-                    key={link.href}
-                    variants={linkVariants}
-                    whileHover={{
-                      scale: 1.1,
-                      color: "#7cfc00",
-                      textShadow: "0 0 10px rgba(124, 252, 0, 0.5)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.1 }}
-                    style={{ willChange: "transform" }}
-                  >
-                    <Link
-                      onClick={closeMenu}
-                      href={link.href}
-                      {...(link.external && {
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                      })}
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.1 }}
-          style={{ willChange: "transform" }}
+        {/* Mobile menu trigger */}
+        <button
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+          className="relative z-50 grid h-10 w-10 place-items-center rounded-md border border-border text-ink transition-colors duration-200 hover:bg-surface-2 md:hidden"
         >
-          <Link
-            href="https://drive.google.com/file/d/1uphppbUFY0wiKEd7QVzvIzCJCL4FnGf2/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-fit hidden md:block px-4 py-2 rounded-md text-[#333] font-medium text-lg bg-[#7cfc00] hover:bg-[#7cfc00]/90 transition-all duration-300 hover:shadow-lg hover:shadow-[#7cfc00]/25"
-          >
-            Resume
-          </Link>
-        </motion.div>
+          {isMenuOpen ? (
+            <MdOutlineCancel size={20} />
+          ) : (
+            <CiMenuFries size={20} />
+          )}
+        </button>
       </div>
-    </motion.div>
+
+      {/* Mobile menu — full-screen takeover */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            key="mobile-menu"
+            variants={menuVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            className="fixed inset-0 z-40 flex flex-col bg-bg/98 backdrop-blur-lg md:hidden"
+          >
+            <div className="flex h-20 items-center justify-between px-6" />
+
+            <nav className="flex flex-1 flex-col items-center justify-center gap-8 px-6">
+              {navLinks.map((link) => (
+                <motion.div key={link.href} variants={linkVariants}>
+                  <Link
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="text-3xl font-semibold tracking-tight text-ink transition-colors hover:text-brand"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </nav>
+
+            <div className="border-t border-border p-6">
+              <Link
+                href="#contact"
+                onClick={closeMenu}
+                className="btn-primary w-full text-base"
+              >
+                Book a Consultation
+                <span aria-hidden>→</span>
+              </Link>
+              <p className="mt-4 text-center text-xs text-ink-subtle">
+                ✓ Friendly chat · ✓ No commitment · ✓ Reply within 24h
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 };
 

@@ -1,413 +1,172 @@
-// export const projects = [
-//   {
-//     url: "intelitalk",
-//     name: "InteliTalk",
-//     description:
-//       "InteliTalk is a chatbot built for university environments. It is developed using the MERN stack, Langchain, OpenAI API, CI/CD pipeline, Docker, and hosted on Render. The backend system was developed to ensure seamless communication and data handling.",
-//     features: [
-//       "University environment-specific Q&A system",
-//       "Integration with OpenAI for advanced conversational capabilities",
-//       "Continuous integration and deployment (CI/CD) with Docker for scalable deployment",
-//     ],
-//     liveDemo: "https://intelitalk.onrender.com",
-//     github: "https://github.com/dev-saiful/InteliTalk",
-//   },
-//   {
-//     url: "code-collab",
-//     name: "CodeCollab",
-//     description:
-//       "CodeCollab is a Q&A system built using the MERN stack with CI/CD pipelines and hosted on Azure. It allows users to post questions, provide answers, and includes a comment system with voting capabilities. Answering questions is restricted based on the user's Codeforces rating.",
-//     features: [
-//       "Post questions and provide answers",
-//       "Comment system with voting functionality",
-//       "Codeforces rating-based answer restrictions",
-//       "CI/CD pipeline for continuous integration and delivery",
-//       "Hosted on Azure for scalable deployment",
-//     ],
-//     liveDemo: "https://codecollab-ochre.vercel.app",
-//     github: "https://github.com/dev-saiful/codecolab-server",
-//   },
-//   {
-//     url: "nasstore",
-//     name: "NasStore",
-//     description:
-//       "NasStore is a full-featured eCommerce system built using the MERN stack. It includes all essential eCommerce functionalities such as product listing, cart management, user authentication, order processing, and payment integration.",
-//     features: [
-//       "Product listing and categorization",
-//       "Shopping cart management",
-//       "User authentication and profile management",
-//       "Order processing and tracking",
-//       "Payment gateway integration",
-//     ],
-//     liveDemo: "https://nasstore.vercel.app",
-//     github: "https://github.com/dev-saiful/nasShop-server",
-//   },
-//   {
-//     url: "nasa-mission-control",
-//     name: "NASA Mission Control",
-//     description:
-//       "NASA Mission Control is a project built with the MERN stack that analyzes CSV datasets to identify habitable planets. The system is deployed using PM2 for process management, along with Docker and a CI/CD pipeline for seamless deployment and scalability.",
-//     features: [
-//       "CSV dataset analysis for planet habitability",
-//       "Real-time data processing and visualization",
-//       "PM2 for process management and monitoring",
-//       "CI/CD pipeline for continuous deployment",
-//       "Docker containerization for scalable infrastructure",
-//     ],
-//     liveDemo: "https://live-demo-nasa-mission-control.com",
-//     github: "https://github.com/dev-saiful/Nasa_Project",
-//   },
-//   {
-//     url: "basic-shopping-cart",
-//     name: "Basic Shopping Cart",
-//     description:
-//       "A simple shopping cart application built with React. This project demonstrates the essential eCommerce functionality of adding products to the cart.",
-//     features: [
-//       "Product listing and cart functionality",
-//       "Add, remove, and update quantities in the cart",
-//       "Responsive design for better user experience",
-//     ],
-//     liveDemo: "https://shopping-cart-ashy-delta.vercel.app",
-//     github: "https://github.com/dev-saiful/shopping-cart",
-//   },
-//   {
-//     url: "travel-recommendation-website",
-//     name: "Travel Recommendation Website",
-//     description:
-//       "A static travel recommendation website built using HTML, CSS, and JavaScript.",
-//     features: [
-//       "Responsive design for mobile and desktop",
-//       "Static website for fast load times",
-//     ],
-//     liveDemo: "https://dev-saiful.github.io/travel_recomendation/",
-//     github: "https://github.com/dev-saiful/travel_recomendation",
-//   },
-//   {
-//     url: "health-census-website",
-//     name: "Health Census Website",
-//     description:
-//       "A health census website built using HTML, CSS, JavaScript, and JSON for data storage. The site collects and displays health-related data, offering insights into demographics, healthcare access, and general health trends.",
-//     features: [
-//       "Health data collection and visualization",
-//       "Interactive charts and graphs using JavaScript",
-//       "JSON-based data storage and retrieval",
-//       "Responsive design for accessibility on all devices",
-//     ],
-//     liveDemo: "https://dev-saiful.github.io/heath_census",
-//     github: "https://github.com/dev-saiful/heath_census",
-//   },
-//   {
-//     url: "tasklist",
-//     name: "TaskList",
-//     description:
-//       "TaskList is a simple task management app built using modern JavaScript, Material CSS, and HTML. It allows users to add, edit, and delete tasks, providing a clean and user-friendly interface for task tracking.",
-//     features: [
-//       "Add, edit, and delete tasks",
-//       "Clean and modern UI using Material CSS",
-//       "Persistent task storage in the browser using localStorage",
-//       "Responsive design for mobile and desktop users",
-//     ],
-//     liveDemo: "https://dev-saiful.github.io/Javascript-Task-List",
-//     github: "https://github.com/dev-saiful/Javascript-Task-List",
-//   },
-//   {
-//     url: "profile-scroller",
-//     name: "Profile Scroller",
-//     description:
-//       "Profile Scroller is a static website built using HTML, CSS, and JavaScript, which fetches user data from an API and allows users to scroll through profiles.",
-//     features: [
-//       "Fetch user profiles from API",
-//       "Scroll through profiles dynamically",
-//       "Minimalistic and user-friendly interface",
-//     ],
-//     liveDemo: "https://dev-saiful.github.io/profile_scroller",
-//     github: "https://github.com/dev-saiful/profile_scroller",
-//   },
-//   {
-//     url: "robofriends",
-//     name: "RoboFriends",
-//     description:
-//       "RoboFriends is a basic React application that fetches data from an external API to display a list of robot friends. The app includes a filter search feature that allows users to search for specific robots by name.",
-//     features: [
-//       "Fetch robot data from an external API",
-//       "Filter search functionality to find specific robots",
-//       "Responsive design for improved user experience",
-//       "Simple and intuitive UI built with React",
-//     ],
-//     liveDemo: "https://dev-saiful.github.io/robofriends",
-//     github: "https://github.com/dev-saiful/robofriends",
-//   },
-//   {
-//     url: "loan-calculator",
-//     name: "Loan Calculator",
-//     description:
-//       "The Loan Calculator is a web application built using HTML, CSS, and JavaScript that allows users to calculate monthly loan payments based on the loan amount, interest rate, and loan term. It provides a user-friendly interface for quick calculations.",
-//     features: [
-//       "Input fields for loan amount, interest rate, and term",
-//       "Real-time calculation of monthly payments",
-//       "Clear and intuitive layout for easy navigation",
-//       "Responsive design for use on any device",
-//     ],
-//     liveDemo: "https://dev-saiful.github.io/LoanCalculator",
-//     github: "https://github.com/dev-saiful/LoanCalculator",
-//   },
-//   {
-//     url: "number-guessing-game",
-//     name: "Number Guessing Game",
-//     description:
-//       "The Number Guessing Game is a fun web project built using HTML, CSS, and JavaScript. Players try to guess a randomly generated number within a certain range, receiving feedback on whether their guesses are too high or too low.",
-//     features: [
-//       "Random number generation for each game round",
-//       "User-friendly interface with clear instructions",
-//       "Feedback on each guess (too high, too low, correct)",
-//     ],
-//     liveDemo: "https://dev-saiful.github.io/Number-Guessing-Game",
-//     github: "https://github.com/dev-saiful/Number-Guessing-Game",
-//   },
-// ];
+// =========================================================
+// Saiful Islam — Personal Portfolio Data
+// AI-Enabled Software Engineer
+// =========================================================
 
+// Core skills organized by expertise level
+export const skills = {
+  primary: [
+    { name: "Node.js", level: 95, category: "Backend" },
+    { name: "Python", level: 90, category: "Backend" },
+    { name: "JavaScript (ES6+)", level: 95, category: "Languages" },
+    { name: "TypeScript", level: 85, category: "Languages" },
+    { name: "Express.js", level: 92, category: "Frameworks" },
+    { name: "Next.js", level: 88, category: "Frameworks" },
+  ],
+  ai: [
+    { name: "LangChain", level: 85, category: "AI/ML" },
+    { name: "OpenAI API", level: 90, category: "AI/ML" },
+    { name: "RAG Systems", level: 82, category: "AI/ML" },
+    { name: "LLMs", level: 88, category: "AI/ML" },
+    { name: "Vector Databases", level: 80, category: "AI/ML" },
+    { name: "Pinecone", level: 78, category: "AI/ML" },
+  ],
+  databases: [
+    { name: "PostgreSQL", level: 88, category: "Databases" },
+    { name: "MongoDB", level: 92, category: "Databases" },
+    { name: "Redis", level: 82, category: "Databases" },
+    { name: "MySQL", level: 80, category: "Databases" },
+  ],
+  devops: [
+    { name: "Docker", level: 85, category: "DevOps" },
+    { name: "AWS (EC2, Lambda, S3)", level: 78, category: "DevOps" },
+    { name: "CI/CD Pipelines", level: 85, category: "DevOps" },
+    { name: "Linux", level: 88, category: "DevOps" },
+    { name: "Nginx", level: 80, category: "DevOps" },
+  ],
+};
+
+// Featured projects - AI/GenAI focused
 export const projects = [
   {
-    url: "code-collab",
-    name: "CodeCollab",
-    description:
-      "CodeCollab is a Q&A system built using the MERN stack with CI/CD pipelines and hosted on Azure. It allows users to post questions, provide answers, and includes a comment system with voting capabilities. Answering questions is restricted based on the user's Codeforces rating.",
-    features: [
-      "Post questions and provide answers",
-      "Comment system with voting functionality",
-      "Codeforces rating-based answer restrictions",
-      "CI/CD pipeline for continuous integration and delivery",
-      "Hosted on Azure for scalable deployment",
-    ],
-    liveDemo: "https://codecollab-ochre.vercel.app",
-    github: "https://github.com/dev-saiful/codecolab-server",
-    user: {
-      email: "saifulsmedia@gmail.com",
-      password: "12345678",
-    },
-    // admin: {
-    //   email: "admin@codecollab.com",
-    //   password: "admin123",
-    // },
-  },
-  {
-    url: "nasstore",
-    name: "NasStore",
-    description:
-      "NasStore is a full-featured eCommerce system built using the MERN stack. It includes all essential eCommerce functionalities such as product listing, cart management, user authentication, order processing, and payment integration.",
-    features: [
-      "Product listing and categorization",
-      "Shopping cart management",
-      "User authentication and profile management",
-      "Order processing and tracking",
-      "Payment gateway integration",
-      "Paypal Email : jhony@personal.example.com",
-      "Paypal PassWord: 12345678",
-    ],
-    liveDemo: "https://nasstore.vercel.app",
-    github: "https://github.com/dev-saiful/nasShop-server",
-    user: {
-      email: "david@gmail.com",
-      password: "1234",
-    },
-    admin: {
-      email: "mh@gmail.com",
-      password: "123",
-    },
-  },
-  {
-    url: "intelitalk",
+    id: "intelitalk",
     name: "InteliTalk",
+    tagline: "AI-Powered University Assistant",
     description:
-      "InteliTalk is a chatbot built for university environments. It is developed using the MERN stack, Langchain, OpenAI API, CI/CD pipeline, Docker, and hosted on Koyeb. The backend system was developed to ensure seamless communication and data handling.",
+      "An intelligent conversational assistant built for university environments. Uses LangChain and GPT models with RAG for context-aware interactions, helping students and faculty get instant answers to campus-related queries.",
     features: [
-      "University environment-specific Q&A system",
-      "Integration with OpenAI for advanced conversational capabilities",
-      "Continuous integration and deployment (CI/CD) with Docker for scalable deployment",
+      "RAG-based context-aware conversations",
+      "LangChain + OpenAI GPT integration",
+      "University-specific knowledge base",
+      "Real-time response streaming",
+      "Docker containerized deployment",
     ],
+    tech: ["Node.js", "LangChain", "OpenAI", "PostgreSQL", "Docker"],
     liveDemo: "https://youtu.be/R0p2bsoRuso?si=lbnyavn_ZTtBvFnk",
     github: "https://github.com/dev-saiful/InteliTalk",
-    user: {
-      email: "sadman@gmail.com",
-      password: "123456",
-    },
-    admin: {
-      email: "saiful@gmail.com",
-      password: "654321",
-    },
+    category: "AI/GenAI",
+    highlight: true,
   },
   {
-    url: "nasa-mission-control",
-    name: "NASA Mission Control",
+    id: "url-shortener",
+    name: "URL Shortener Service",
+    tagline: "Production-Ready URL Management",
     description:
-      "NASA Mission Control is a project built with the MERN stack that analyzes CSV datasets to identify habitable planets. The system is deployed using PM2 for process management, along with Docker and a CI/CD pipeline for seamless deployment and scalability.",
+      "A scalable URL shortening service built with NestJS, Redis, and PostgreSQL. Features JWT authentication, rate limiting, analytics tracking, and high-performance redirect handling.",
     features: [
-      "CSV dataset analysis for planet habitability",
-      "Real-time data processing and visualization",
-      "PM2 for process management and monitoring",
-      "CI/CD pipeline for continuous deployment",
-      "Docker containerization for scalable infrastructure",
+      "NestJS architecture",
+      "Redis caching for instant redirects",
+      "JWT authentication system",
+      "Rate limiting & abuse prevention",
+      "Click analytics & tracking",
     ],
+    tech: ["NestJS", "Redis", "PostgreSQL", "JWT", "TypeScript"],
+    liveDemo: "#",
+    github: "https://github.com/dev-saiful",
+    category: "Backend",
+    highlight: true,
+  },
+  {
+    id: "codecollab",
+    name: "CodeCollab",
+    tagline: "Developer Q&A Platform",
+    description:
+      "A collaborative Q&A platform for developers built with the MERN stack. Features Codeforces rating-based answer restrictions, voting system, and CI/CD deployment on Azure.",
+    features: [
+      "Codeforces rating integration",
+      "Voting & comment system",
+      "CI/CD pipeline on Azure",
+      "Real-time notifications",
+      "User reputation system",
+    ],
+    tech: ["MongoDB", "Express.js", "React", "Node.js", "Azure"],
+    liveDemo: "https://codecollab-ochre.vercel.app",
+    github: "https://github.com/dev-saiful/codecolab-server",
+    category: "Full Stack",
+    highlight: false,
+  },
+  {
+    id: "nasstore",
+    name: "NasStore",
+    tagline: "Full-Stack eCommerce Solution",
+    description:
+      "A complete eCommerce platform with product management, cart system, user authentication, order processing, and payment gateway integration.",
+    features: [
+      "Product catalog & search",
+      "Shopping cart management",
+      "Payment gateway integration",
+      "Order tracking system",
+      "Admin dashboard",
+    ],
+    tech: ["MongoDB", "Express.js", "React", "Node.js", "Stripe"],
+    liveDemo: "https://nasstore.vercel.app",
+    github: "https://github.com/dev-saiful/nasShop-server",
+    category: "Full Stack",
+    highlight: false,
+  },
+  {
+    id: "nasa-mission",
+    name: "NASA Mission Control",
+    tagline: "Space Data Analysis Platform",
+    description:
+      "A data analysis platform that processes NASA CSV datasets to identify habitable planets. Built with MERN stack, PM2 process management, and Docker containerization.",
+    features: [
+      "CSV dataset processing",
+      "Planet habitability analysis",
+      "PM2 process management",
+      "Docker deployment",
+      "Data visualization",
+    ],
+    tech: ["MongoDB", "Express.js", "React", "Node.js", "Docker"],
     liveDemo: "https://accused-barbee-sadman-shaon-51afef37.koyeb.app",
     github: "https://github.com/dev-saiful/Nasa_Project",
-    // user: {
-    //   email: "user@nasa.com",
-    //   password: "user123",
-    // },
-    // admin: {
-    //   email: "admin@nasa.com",
-    //   password: "admin123",
-    // },
+    category: "Data Science",
+    highlight: false,
+  },
+];
+
+// Social links
+export const socialLinks = {
+  github: "https://github.com/dev-saiful",
+  linkedin: "https://www.linkedin.com/in/dev-saiful/",
+  twitter: "https://x.com/dev_saiful",
+  facebook: "https://www.facebook.com/jsdev.saiful",
+  email: "hello@saifulislam.com",
+};
+
+// Personal stats for hero section
+export const personalStats = [
+  { value: 15, suffix: "+", label: "Businesses Helped" },
+  { value: 98, suffix: "%", label: "Client Satisfaction" },
+  { value: 40, suffix: "%", label: "Avg Efficiency Gain" },
+  { value: 24, suffix: "h", label: "Response Time" },
+];
+
+// Certification badges
+export const certifications = [
+  {
+    name: "API Design in Node.js",
+    issuer: "FrontendMasters",
+    icon: "code",
   },
   {
-    url: "basic-shopping-cart",
-    name: "Basic Shopping Cart",
-    description:
-      "A simple shopping cart application built with React. This project demonstrates the essential eCommerce functionality of adding products to the cart.",
-    features: [
-      "Product listing and cart functionality",
-      "Add, remove, and update quantities in the cart",
-      "Responsive design for better user experience",
-    ],
-    liveDemo: "https://shopping-cart-ashy-delta.vercel.app",
-    github: "https://github.com/dev-saiful/shopping-cart",
-    // user: {
-    //   email: "user@cart.com",
-    //   password: "user123",
-    // },
-    // admin: {
-    //   email: "admin@cart.com",
-    //   password: "admin123",
-    // },
+    name: "Generative AI: Introduction",
+    issuer: "IBM",
+    icon: "brain",
   },
   {
-    url: "travel-recommendation-website",
-    name: "Travel Recommendation Website",
-    description:
-      "A static travel recommendation website built using HTML, CSS, and JavaScript.",
-    features: [
-      "Responsive design for mobile and desktop",
-      "Static website for fast load times",
-    ],
-    liveDemo: "https://dev-saiful.github.io/travel_recomendation/",
-    github: "https://github.com/dev-saiful/travel_recomendation",
-    // user: {
-    //   email: "user@travel.com",
-    //   password: "user123",
-    // },
-    // admin: {
-    //   email: "admin@travel.com",
-    //   password: "admin123",
-    // },
-  },
-  {
-    url: "health-census-website",
-    name: "Health Census Website",
-    description:
-      "A health census website built using HTML, CSS, JavaScript, and JSON for data storage. The site collects and displays health-related data, offering insights into demographics, healthcare access, and general health trends.",
-    features: [
-      "Health data collection and visualization",
-      "Interactive charts and graphs using JavaScript",
-      "JSON-based data storage and retrieval",
-      "Responsive design for accessibility on all devices",
-    ],
-    liveDemo: "https://dev-saiful.github.io/heath_census",
-    github: "https://github.com/dev-saiful/heath_census",
-    // user: {
-    //   email: "user@health.com",
-    //   password: "user123",
-    // },
-    // admin: {
-    //   email: "admin@health.com",
-    //   password: "admin123",
-    // },
-  },
-  {
-    url: "tasklist",
-    name: "TaskList",
-    description:
-      "TaskList is a simple task management app built using modern JavaScript, Material CSS, and HTML. It allows users to add, edit, and delete tasks, providing a clean and user-friendly interface for task tracking.",
-    features: [
-      "Add, edit, and delete tasks",
-      "Clean and modern UI using Material CSS",
-      "Persistent task storage in the browser using localStorage",
-      "Responsive design for mobile and desktop users",
-    ],
-    liveDemo: "https://dev-saiful.github.io/Javascript-Task-List",
-    github: "https://github.com/dev-saiful/Javascript-Task-List",
-  },
-  {
-    url: "profile-scroller",
-    name: "Profile Scroller",
-    description:
-      "Profile Scroller is a static website built using HTML, CSS, and JavaScript, which fetches user data from an API and allows users to scroll through profiles.",
-    features: [
-      "Fetch user profiles from API",
-      "Scroll through profiles dynamically",
-      "Minimalistic and user-friendly interface",
-    ],
-    liveDemo: "https://dev-saiful.github.io/profile_scroller",
-    github: "https://github.com/dev-saiful/profile_scroller",
-    // user: {
-    //   email: "user@profiles.com",
-    //   password: "user123",
-    // },
-  },
-  {
-    url: "robofriends",
-    name: "RoboFriends",
-    description:
-      "RoboFriends is a basic React application that fetches data from an external API to display a list of robot friends. The app includes a filter search feature that allows users to search for specific robots by name.",
-    features: [
-      "Fetch robot data from an external API",
-      "Filter search functionality to find specific robots",
-      "Responsive design for improved user experience",
-      "Simple and intuitive UI built with React",
-    ],
-    liveDemo: "https://dev-saiful.github.io/robofriends",
-    github: "https://github.com/dev-saiful/robofriends",
-    // user: {
-    //   email: "user@robots.com",
-    //   password: "user123",
-    // },
-    // admin: {
-    //   email: "admin@robots.com",
-    //   password: "admin123",
-    // },
-  },
-  {
-    url: "loan-calculator",
-    name: "Loan Calculator",
-    description:
-      "The Loan Calculator is a web application built using HTML, CSS, and JavaScript that allows users to calculate monthly loan payments based on the loan amount, interest rate, and loan term. It provides a user-friendly interface for quick calculations.",
-    features: [
-      "Input fields for loan amount, interest rate, and term",
-      "Real-time calculation of monthly payments",
-      "Clear and intuitive layout for easy navigation",
-      "Responsive design for use on any device",
-    ],
-    liveDemo: "https://dev-saiful.github.io/LoanCalculator",
-    github: "https://github.com/dev-saiful/LoanCalculator",
-  },
-  {
-    url: "number-guessing-game",
-    name: "Number Guessing Game",
-    description:
-      "The Number Guessing Game is a fun web project built using HTML, CSS, and JavaScript. Players try to guess a randomly generated number within a certain range, receiving feedback on whether their guesses are too high or too low.",
-    features: [
-      "Random number generation for each game round",
-      "User-friendly interface with clear instructions",
-      "Feedback on each guess (too high, too low, correct)",
-    ],
-    liveDemo: "https://dev-saiful.github.io/Number-Guessing-Game",
-    github: "https://github.com/dev-saiful/Number-Guessing-Game",
-    // user: {
-    //   email: "user@game.com",
-    //   password: "user123",
-    // },
-    // admin: {
-    //   email: "admin@game.com",
-    //   password: "admin123",
-    // },
+    name: "Complete NodeJS Developer",
+    issuer: "Zero to Mastery",
+    icon: "server",
   },
 ];
