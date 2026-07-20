@@ -38,7 +38,7 @@ export default function Service() {
 
   return (
     <section
-      id="skills"
+      id="services"
       ref={ref}
       className="section relative overflow-hidden bg-surface"
     >
