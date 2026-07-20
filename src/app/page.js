@@ -5,7 +5,7 @@ import TrustBar from "@/components/TrustBar";
 import About from "@/components/About";
 import Service from "@/components/Service";
 import Process from "@/components/Process";
-import Pricing from "@/components/Pricing";
+// import Pricing from "@/components/Pricing";
 import Project from "@/components/Project";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -34,7 +34,7 @@ export default function page() {
             <About />
             <Service />
             <Process />
-            <Pricing />
+            {/* <Pricing /> */}
             <Testimonials />
             <Project />
             <FAQ />
