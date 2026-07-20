@@ -199,7 +199,7 @@ export default function Contact() {
 
             {/* Email CTA */}
             <a
-              href="mailto:hello@saifulislam.com"
+              href="mailto:devwork.saiful@gmail.com"
               className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-200 hover:border-brand/40 hover:bg-brand/5"
             >
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand transition-all duration-300 group-hover:scale-105 group-hover:bg-brand/20">
@@ -210,7 +210,7 @@ export default function Contact() {
                   Email
                 </span>
                 <p className="text-base font-semibold text-ink">
-                  hello@saifulislam.com
+                  devwork.saiful@gmail.com
                 </p>
                 <p className="text-sm text-ink-muted">
                   Response within 24 hours

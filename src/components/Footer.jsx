@@ -115,10 +115,10 @@ export default function Footer() {
               <li className="flex items-start gap-2.5">
                 <Mail size={16} className="mt-0.5 shrink-0 text-brand" />
                 <a
-                  href="mailto:hello@saifulislam.com"
+                  href="mailto:devwork.saiful@gmail.com"
                   className="text-sm text-ink-muted transition-colors hover:text-brand"
                 >
-                  hello@saifulislam.com
+                  devwork.saiful@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
@@ -141,9 +141,6 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border py-6 sm:flex-row">
           <p className="text-xs text-ink-subtle">
             &copy; {new Date().getFullYear()} Saiful Islam. All rights reserved.
-          </p>
-          <p className="text-xs text-ink-subtle">
-            Built with Next.js &amp; Tailwind CSS
           </p>
         </div>
       </div>

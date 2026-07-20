@@ -141,7 +141,7 @@ export const socialLinks = {
   linkedin: "https://www.linkedin.com/in/dev-saiful/",
   twitter: "https://x.com/dev_saiful",
   facebook: "https://www.facebook.com/jsdev.saiful",
-  email: "hello@saifulislam.com",
+  email: "devwork.saiful@gmail.com",
 };
 
 // Personal stats for hero section
