@@ -19,14 +19,14 @@ export default function ProjectDetail() {
   }, []);
 
   if (!project) {
-    return <div className="text-white text-center py-10">Project not found!</div>;
+    return <div className="text-ink text-center py-10">Project not found!</div>;
   }
 
   return (
-    <div className={`max-w-screen-lg mx-auto px-5 py-12 text-white transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`max-w-screen-lg mx-auto px-5 py-12 text-ink transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <button
         onClick={() => navigate.back()}
-        className="mb-4 px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-all flex items-center justify-center gap-1"
+        className="mb-4 px-4 py-2 bg-surface rounded-md hover:bg-surface-2 transition-all flex items-center justify-center gap-1"
       >
         <ArrowLeft size={16} /> Back
       </button>
@@ -35,7 +35,7 @@ export default function ProjectDetail() {
         <Link href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 p-3 bg-blue-500 rounded-md hover:bg-blue-600 transition-all text-center w-full sm:w-auto">
           <ExternalLink size={16} /> Live Demo
         </Link>
-        <Link href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 p-3 bg-gray-800 rounded-md hover:bg-gray-700 transition-all text-center w-full sm:w-auto">
+        <Link href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 p-3 bg-surface rounded-md hover:bg-surface-2 transition-all text-center w-full sm:w-auto">
           <Github size={16} /> GitHub Repo
         </Link>
       </div>
@@ -48,7 +48,7 @@ export default function ProjectDetail() {
       </ul>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {project.user && (
-          <div className="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
               <User size={24} /> User Credentials
             </h2>
@@ -57,7 +57,7 @@ export default function ProjectDetail() {
           </div>
         )}
         {project.admin && (
-          <div className="bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-surface p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
               <Shield size={24} /> Admin Credentials
             </h2>

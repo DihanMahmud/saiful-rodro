@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { CircleCheck } from "lucide-react";
 
 const steps = [
   {
@@ -117,9 +118,9 @@ export default function Process() {
 
         {/* Guarantee strip */}
         <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-ink-muted">
-          <span>✓ Fixed pricing</span>
-          <span>✓ Weekly demos</span>
-          <span>✓ 30-day support included</span>
+          <span className="inline-flex items-center gap-1.5"><CircleCheck size={16} className="text-brand" /> Fixed pricing</span>
+          <span className="inline-flex items-center gap-1.5"><CircleCheck size={16} className="text-brand" /> Weekly demos</span>
+          <span className="inline-flex items-center gap-1.5"><CircleCheck size={16} className="text-brand" /> 30-day support included</span>
         </div>
 
         {/* Bottom note */}

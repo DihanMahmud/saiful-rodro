@@ -4,6 +4,7 @@ import { motion, useInView, useMotionValue, useTransform, animate } from "framer
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Sparkles, CircleCheck } from "lucide-react";
 import { personalStats } from "@/data";
 
 // =========================================================
@@ -168,7 +169,7 @@ export default function Home() {
               custom={0}
             >
               <span className="eyebrow">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                <Sparkles className="h-3.5 w-3.5 text-brand" />
                 AI & Web Development for Local Businesses
               </span>
             </motion.div>
@@ -191,7 +192,7 @@ export default function Home() {
               custom={0.25}
               className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-border bg-surface/60 px-3 py-1.5 text-sm backdrop-blur-sm"
             >
-              <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
+              <CircleCheck className="h-4 w-4 text-brand animate-pulse" />
               <span className="font-medium text-ink">Available for new projects</span>
               <span className="text-ink-subtle">
                 — let&apos;s talk

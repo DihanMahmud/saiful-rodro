@@ -19,7 +19,7 @@
   /* Ink — warm off-white for primary, muted grays for hierarchy */
   --color-ink: 250 250 247;      /* #FAFAF7  primary text */
   --color-ink-muted: 161 161 170;/* #A1A1AA  secondary text */
-  --color-ink-subtle: 113 113 122;/* #71717A  tertiary / hints */
+  --color-ink-subtle: 150 150 160;/* #9696A0  tertiary / hints — WCAG AA compliant */
 
   /* Borders — low-opacity hairlines, never heavy lines */
   --color-border: 255 255 255;       /* used at /8 opacity */

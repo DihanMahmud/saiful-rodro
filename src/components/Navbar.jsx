@@ -5,6 +5,7 @@ import Link from "next/link";
 import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { MdOutlineCancel } from "react-icons/md";
+import { CircleCheck } from "lucide-react";
 
 const menuVariants = {
   closed: {
@@ -190,8 +191,10 @@ const Navbar = () => {
                 Book a Consultation
                 <span aria-hidden>→</span>
               </Link>
-              <p className="mt-4 text-center text-xs text-ink-subtle">
-                ✓ Friendly chat · ✓ No commitment · ✓ Reply within 24h
+              <p className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-ink-subtle">
+                <span className="inline-flex items-center gap-1"><CircleCheck size={12} className="text-brand" /> Friendly chat</span>
+                <span className="inline-flex items-center gap-1"><CircleCheck size={12} className="text-brand" /> No commitment</span>
+                <span className="inline-flex items-center gap-1"><CircleCheck size={12} className="text-brand" /> Reply within 24h</span>
               </p>
             </div>
           </motion.div>
