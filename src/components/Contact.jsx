@@ -1,25 +1,9 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
-import { Globe, Mail, Phone, Send } from "lucide-react";
-
-const channels = [
-  {
-    icon: Send,
-    label: "Book a Consultation",
-    value: "Free 15-minute call",
-    href: "#",
-    primary: true,
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "hello@saifulislam.com",
-    href: "mailto:hello@saifulislam.com",
-  },
-];
+import { Globe, Mail, Phone, Send, MessageCircle, CheckCircle } from "lucide-react";
 
 const secondaryInfo = [
   {
@@ -42,9 +26,36 @@ const secondaryInfo = [
   },
 ];
 
+const whatsappNumber = "8801521566142";
+const whatsappLink = `https://wa.me/${whatsappNumber}`;
+
 export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.12 });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/send-message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <section
@@ -65,7 +76,7 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="eyebrow">Book your free consultation</span>
+          <span className="eyebrow">Get in touch</span>
           <h2 className="mt-4 text-display-md text-ink">
             Let&apos;s talk about your project.
           </h2>
@@ -75,92 +86,167 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* Primary channels */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
-          }}
-          className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-2"
-        >
-          {channels.map((ch) => {
-            const Icon = ch.icon;
-            return (
-              <motion.div
-                key={ch.label}
-                variants={{
-                  hidden: { opacity: 0, y: 16 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-                  },
-                }}
-                className={`group flex flex-col items-center gap-3 rounded-2xl p-5 text-center transition-all duration-200 ${
-                  ch.primary
-                    ? "border-brand bg-brand-soft"
-                    : "border-border bg-card hover:border-brand hover:border-border-strong"
-                }`}
-              >
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand transition-all duration-300 group-hover:scale-105 group-hover:bg-brand/20">
-                  <Icon size={22} strokeWidth={1.75} />
-                </div>
-                <span className="text-xs font-medium uppercase tracking-wider text-ink-subtle">
-                  {ch.label}
-                </span>
-                <span className="text-base font-semibold text-ink">
-                  {ch.value}
-                </span>
-                <Link
-                  href={ch.href}
-                  target={ch.external ? "_blank" : undefined}
-                  rel={ch.external ? "noopener noreferrer" : undefined}
-                  className="text-sm font-medium text-brand transition-colors duration-200 hover:underline"
-                >
-                  Tap to open →
-                </Link>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+        <div className="mt-14 grid gap-10 lg:grid-cols-2">
+          {/* Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            <form onSubmit={handleSubmit} className="card-surface p-6 space-y-5">
+              <div>
+                <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full rounded-lg border border-border bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-ink">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full rounded-lg border border-border bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-ink">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  required
+                  rows={5}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full resize-none rounded-lg border border-border bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
 
-        {/* Secondary info */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 grid gap-4 md:grid-cols-3"
-        >
-          {secondaryInfo.map((info) => {
-            const Icon = info.icon;
-            return (
-              <motion.div
-                key={info.label}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="card-surface p-5"
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="btn-primary w-full disabled:opacity-50"
               >
-                <div className="grid h-9 w-9 place-items-center rounded-lg bg-brand-soft text-brand">
-                  <Icon size={20} strokeWidth={1.75} />
-                </div>
-                <h4 className="mt-3 text-sm font-medium text-ink">
-                  {info.label}
-                </h4>
-                <p className="mt-1 text-sm font-medium text-ink">
-                  {info.value}
-                </p>
-                {info.subtext && (
-                  <p className="mt-1 text-xs text-ink-subtle">
-                    {info.subtext}
-                  </p>
+                {status === "sending" ? (
+                  "Sending..."
+                ) : status === "sent" ? (
+                  <span className="inline-flex items-center gap-2">
+                    <CheckCircle size={16} /> Message Sent!
+                  </span>
+                ) : (
+                  <>
+                    Send Message
+                    <Send size={16} />
+                  </>
                 )}
-              </motion.div>
-            );
-          })}
-        </motion.div>
+              </button>
+
+              {status === "error" && (
+                <p className="text-center text-sm text-danger">
+                  Something went wrong. Please try again or contact me directly.
+                </p>
+              )}
+            </form>
+          </motion.div>
+
+          {/* Right column — WhatsApp + Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="space-y-6"
+          >
+            {/* WhatsApp CTA */}
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-200 hover:border-green-500/40 hover:bg-green-500/5"
+            >
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-green-500/10 text-green-500 transition-all duration-300 group-hover:scale-105 group-hover:bg-green-500/20">
+                <MessageCircle size={22} strokeWidth={1.75} />
+              </div>
+              <div>
+                <span className="text-xs font-medium uppercase tracking-wider text-ink-subtle">
+                  WhatsApp
+                </span>
+                <p className="text-base font-semibold text-ink">
+                  Chat directly on WhatsApp
+                </p>
+                <p className="text-sm text-ink-muted">
+                  Quick reply — usually within hours
+                </p>
+              </div>
+              <span className="ml-auto text-sm font-medium text-green-500 transition-colors group-hover:underline">
+                Open →
+              </span>
+            </a>
+
+            {/* Email CTA */}
+            <a
+              href="mailto:hello@saifulislam.com"
+              className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-200 hover:border-brand/40 hover:bg-brand/5"
+            >
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand transition-all duration-300 group-hover:scale-105 group-hover:bg-brand/20">
+                <Mail size={22} strokeWidth={1.75} />
+              </div>
+              <div>
+                <span className="text-xs font-medium uppercase tracking-wider text-ink-subtle">
+                  Email
+                </span>
+                <p className="text-base font-semibold text-ink">
+                  hello@saifulislam.com
+                </p>
+                <p className="text-sm text-ink-muted">
+                  Response within 24 hours
+                </p>
+              </div>
+              <span className="ml-auto text-sm font-medium text-brand transition-colors group-hover:underline">
+                Open →
+              </span>
+            </a>
+
+            {/* Secondary info */}
+            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {secondaryInfo.map((info) => {
+                const Icon = info.icon;
+                return (
+                  <div key={info.label} className="card-surface p-4">
+                    <div className="grid h-8 w-8 place-items-center rounded-lg bg-brand-soft text-brand">
+                      <Icon size={18} strokeWidth={1.75} />
+                    </div>
+                    <h4 className="mt-2 text-sm font-medium text-ink">
+                      {info.label}
+                    </h4>
+                    <p className="mt-1 text-sm text-ink-muted">
+                      {info.value}
+                    </p>
+                    {info.subtext && (
+                      <p className="mt-0.5 text-xs text-ink-subtle">
+                        {info.subtext}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
+        </div>
 
         {/* Trust message */}
         <motion.div
@@ -178,13 +264,6 @@ export default function Contact() {
             Just a straightforward conversation about what&apos;s best for your
             project.
           </p>
-          <Link
-            href="mailto:hello@saifulislam.com"
-            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
-          >
-            Book a free consultation
-            <span aria-hidden>→</span>
-          </Link>
         </motion.div>
       </div>
     </section>
