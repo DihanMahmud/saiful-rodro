@@ -67,7 +67,7 @@ export default function Process() {
           <h2 className="mt-4 text-display-md text-ink">
             No surprises. Just results.
           </h2>
-          <p className="mt-4 text-body-lg text-ink-muted">
+          <p className="mt-4 text-body-lg" style={{ color: "rgb(var(--color-ink-muted))" }}>
             A straightforward process designed to keep you informed and in control every step of the way.
           </p>
         </motion.div>

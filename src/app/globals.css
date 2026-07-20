@@ -213,7 +213,7 @@ button {
   .pill {
     @apply inline-flex items-center gap-1.5 rounded-full
            px-3 py-1 text-xs font-medium
-           bg-brand-soft text-brand border border-brand/20;
+           bg-brand-soft text-ink border border-brand/20;
   }
 
   /* Stat chip — for the hero proof row */
