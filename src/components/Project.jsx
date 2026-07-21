@@ -74,7 +74,7 @@ function ProjectCard({ project, index }) {
       }}
       className="group card-surface card-surface-hover flex flex-col overflow-hidden"
     >
-      <div className="card-surface p-6">
+      <div className="p-6">
         <span className="pill">{project.industry}</span>
         <h3 className="mt-3 text-lg font-semibold text-ink">{project.name}</h3>
         <div className="mt-3 space-y-2 text-sm text-ink-muted">

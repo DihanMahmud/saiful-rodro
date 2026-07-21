@@ -15,7 +15,7 @@ const secondaryInfo = [
   {
     icon: Mail,
     label: "Working hours",
-    value: "Sun–Thu • 10:00–19:00 BST (GMT+6)",
+    value: "Sat–Thu • 10:00 AM – 7:00 PM BST (GMT+6)",
     subtext: "Flexible for anyone worldwide",
   },
   {
@@ -227,7 +227,7 @@ export default function Contact() {
                 const Icon = info.icon;
                 return (
                   <div key={info.label} className="card-surface p-4">
-                    <div className="grid h-8 w-8 place-items-center rounded-lg bg-brand-soft text-brand">
+                    <div className="grid h-8 w-8 place-items-center rounded-lg text-ink-muted">
                       <Icon size={18} strokeWidth={1.75} />
                     </div>
                     <h4 className="mt-2 text-sm font-medium text-ink">
@@ -258,7 +258,7 @@ export default function Contact() {
           <h3 className="text-base font-semibold text-ink">
             No commitment. Just a conversation.
           </h3>
-          <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+          <p className="mt-3 text-sm leading-relaxed text-ink">
             I&apos;ll review your project needs and give you honest advice —
             even if we don&apos;t work together. No sales pitch, no pressure.
             Just a straightforward conversation about what&apos;s best for your

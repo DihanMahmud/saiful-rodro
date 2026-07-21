@@ -118,7 +118,7 @@ export default function About() {
                     className="flex gap-4"
                   >
                     <div className="flex flex-col items-center">
-                      <div className="grid h-10 w-10 place-items-center rounded-full border border-border bg-brand-soft text-brand">
+                      <div className="grid h-10 w-10 place-items-center rounded-full border border-border text-ink-muted">
                         <Icon size={18} strokeWidth={1.75} />
                       </div>
                       {index < journey.length - 1 && (
