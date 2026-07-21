@@ -159,9 +159,9 @@ export default function Home() {
       />
 
       <div className="section-container relative">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-16">
           {/* ===== Left column — copy & conversion ===== */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 text-center lg:text-left">
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -170,7 +170,8 @@ export default function Home() {
             >
               <span className="eyebrow">
                 <Sparkles className="h-3.5 w-3.5 text-brand" />
-                AI & Web Development for Local Businesses
+                <span className="hidden sm:inline">AI & Web Development for Local Businesses</span>
+                <span className="sm:hidden">AI & Web Dev for Local Business</span>
               </span>
             </motion.div>
 

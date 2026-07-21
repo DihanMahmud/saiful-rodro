@@ -156,7 +156,7 @@ button {
   /* Primary CTA — the conversion anchor of the page */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-lg
-           px-6 py-3.5 text-base font-semibold
+           px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base font-semibold
            bg-brand text-brand-fg
            transition-all duration-200 ease-elegant
            hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-glow
@@ -166,7 +166,7 @@ button {
   /* Secondary / ghost CTA — paired with primary */
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 rounded-lg
-           px-6 py-3.5 text-base font-semibold
+           px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base font-semibold
            bg-transparent text-ink
            border border-border-strong
            transition-all duration-200 ease-elegant
@@ -189,7 +189,7 @@ button {
 
   /* Section wrapper — consistent vertical rhythm */
   .section {
-    @apply relative px-6 md:px-12 py-section-sm md:py-section;
+    @apply relative px-4 sm:px-6 md:px-12 py-section-sm md:py-section;
   }
   .section-container {
     @apply mx-auto w-full max-w-7xl;

@@ -75,6 +75,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-left"
         >
           <span className="eyebrow">Get in touch</span>
           <h2 className="mt-4 text-display-md text-ink">
@@ -86,14 +87,14 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-2">
+        <div className="mt-10 sm:mt-14 grid gap-8 sm:gap-10 lg:grid-cols-2">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <form onSubmit={handleSubmit} className="card-surface p-6 space-y-5">
+            <form onSubmit={handleSubmit} className="card-surface p-3 sm:p-6 space-y-4">
               <div>
                 <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
                   Name
@@ -104,7 +105,7 @@ export default function Contact() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full rounded-lg border border-border bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                  className="w-full rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
                   placeholder="Your name"
                 />
               </div>
@@ -118,7 +119,7 @@ export default function Contact() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full rounded-lg border border-border bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                  className="w-full rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
                   placeholder="you@example.com"
                 />
               </div>
@@ -129,10 +130,10 @@ export default function Contact() {
                 <textarea
                   id="message"
                   required
-                  rows={5}
+                  rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full resize-none rounded-lg border border-border bg-bg px-4 py-3 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+                  className="w-full resize-none rounded-lg border border-border bg-bg px-3 py-2.5 text-sm text-ink placeholder:text-ink-subtle focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -176,23 +177,23 @@ export default function Contact() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-200 hover:border-green-500/40 hover:bg-green-500/5"
+              className="group flex items-center gap-3 sm:gap-4 rounded-2xl border border-border bg-card p-4 sm:p-5 transition-all duration-200 hover:border-green-500/40 hover:bg-green-500/5"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-green-500/10 text-green-500 transition-all duration-300 group-hover:scale-105 group-hover:bg-green-500/20">
-                <MessageCircle size={22} strokeWidth={1.75} />
+              <div className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-xl bg-green-500/10 text-green-500 transition-all duration-300 group-hover:scale-105 group-hover:bg-green-500/20">
+                <MessageCircle size={20} strokeWidth={1.75} />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <span className="text-xs font-medium uppercase tracking-wider text-ink-subtle">
                   WhatsApp
                 </span>
-                <p className="text-base font-semibold text-ink">
+                <p className="text-sm sm:text-base font-semibold text-ink">
                   Chat directly on WhatsApp
                 </p>
-                <p className="text-sm text-ink-muted">
+                <p className="text-xs sm:text-sm text-ink-muted">
                   Quick reply — usually within hours
                 </p>
               </div>
-              <span className="ml-auto text-sm font-medium text-green-500 transition-colors group-hover:underline">
+              <span className="shrink-0 text-xs sm:text-sm font-medium text-green-500 transition-colors group-hover:underline">
                 Open →
               </span>
             </a>
@@ -200,44 +201,48 @@ export default function Contact() {
             {/* Email CTA */}
             <a
               href="mailto:devwork.saiful@gmail.com"
-              className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-200 hover:border-brand/40 hover:bg-brand/5"
+              className="group flex items-center gap-3 sm:gap-4 rounded-2xl border border-border bg-card p-4 sm:p-5 transition-all duration-200 hover:border-brand/40 hover:bg-brand/5"
             >
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand transition-all duration-300 group-hover:scale-105 group-hover:bg-brand/20">
-                <Mail size={22} strokeWidth={1.75} />
+              <div className="grid h-10 w-10 sm:h-12 sm:w-12 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand transition-all duration-300 group-hover:scale-105 group-hover:bg-brand/20">
+                <Mail size={20} strokeWidth={1.75} />
               </div>
-              <div>
+              <div className="min-w-0 flex-1">
                 <span className="text-xs font-medium uppercase tracking-wider text-ink-subtle">
                   Email
                 </span>
-                <p className="text-base font-semibold text-ink">
+                <p className="text-sm sm:text-base font-semibold text-ink truncate">
                   devwork.saiful@gmail.com
                 </p>
-                <p className="text-sm text-ink-muted">
+                <p className="text-xs sm:text-sm text-ink-muted">
                   Response within 24 hours
                 </p>
               </div>
-              <span className="ml-auto text-sm font-medium text-brand transition-colors group-hover:underline">
+              <span className="shrink-0 text-xs sm:text-sm font-medium text-brand transition-colors group-hover:underline">
                 Open →
               </span>
             </a>
 
             {/* Secondary info */}
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+            <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
               {secondaryInfo.map((info) => {
                 const Icon = info.icon;
                 return (
-                  <div key={info.label} className="card-surface p-4">
-                    <div className="grid h-8 w-8 place-items-center rounded-lg text-ink-muted">
-                      <Icon size={18} strokeWidth={1.75} />
+                  <div key={info.label} className="card-surface p-3 sm:p-4">
+                    <div className="flex items-center gap-3">
+                      <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg text-ink-muted">
+                        <Icon size={18} strokeWidth={1.75} />
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-medium text-ink">
+                          {info.label}
+                        </h4>
+                        <p className="mt-0.5 text-xs sm:text-sm text-ink-muted">
+                          {info.value}
+                        </p>
+                      </div>
                     </div>
-                    <h4 className="mt-2 text-sm font-medium text-ink">
-                      {info.label}
-                    </h4>
-                    <p className="mt-1 text-sm text-ink-muted">
-                      {info.value}
-                    </p>
                     {info.subtext && (
-                      <p className="mt-0.5 text-xs text-ink-subtle">
+                      <p className="mt-1.5 text-xs text-ink-subtle pl-11">
                         {info.subtext}
                       </p>
                     )}
@@ -253,7 +258,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-12 rounded-2xl border border-border bg-brand-soft/50 p-6 text-center"
+          className="mt-10 sm:mt-12 rounded-2xl border border-border bg-brand-soft/50 p-4 sm:p-6 text-center"
         >
           <h3 className="text-base font-semibold text-ink">
             No commitment. Just a conversation.

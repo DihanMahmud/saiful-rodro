@@ -41,7 +41,7 @@ module.exports = {
       },
       fontSize: {
         // Display
-        "display-xl": ["clamp(2.25rem, 5vw, 3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "display-xl": ["clamp(1.875rem, 5vw, 3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
         "display-lg": ["clamp(2.75rem, 5.5vw, 4rem)", { lineHeight: "1.08", letterSpacing: "-0.025em", fontWeight: "700" }],
         "display-md": ["clamp(2rem, 4vw, 3rem)", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "700" }],
         "display-sm": ["clamp(1.5rem, 2.5vw, 2rem)", { lineHeight: "1.2", letterSpacing: "-0.015em", fontWeight: "600" }],
