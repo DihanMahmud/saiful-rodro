@@ -199,7 +199,7 @@ export default function TrustBar() {
                 }}
                 className="card-surface card-surface-hover p-6"
               >
-                <div className="grid h-10 w-10 place-items-center rounded-lg bg-brand-soft text-brand">
+                <div className="grid h-10 w-10 place-items-center rounded-lg text-ink-muted">
                   <Icon size={20} strokeWidth={1.75} />
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-ink">
