@@ -2,46 +2,234 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap');
+/* =========================================================
+   Design Tokens — Premium SaaS Agency palette (dark, refined)
+   The original neon green is replaced with a mature, trust-
+   signalling variant. Every surface, border, and text color
+   in the system reads from these tokens.
+   ========================================================= */
+:root {
+  /* Surfaces — graduated charcoal, warmer than pure black */
+  --color-bg: 10 11 15;          /* #0A0B0F  page background */
+  --color-surface: 19 20 25;     /* #131419  elevated surface */
+  --color-surface-2: 24 26 33;   /* #181A21  sections/alt bg */
+  --color-card: 24 26 33;        /* #181A21  cards */
+  --color-card-hover: 31 33 41;  /* #1F2129  card hover state */
 
-/* Add this in a global CSS file */
+  /* Ink — warm off-white for primary, muted grays for hierarchy */
+  --color-ink: 250 250 247;      /* #FAFAF7  primary text */
+  --color-ink-muted: 161 161 170;/* #A1A1AA  secondary text */
+  --color-ink-subtle: 150 150 160;/* #9696A0  tertiary / hints — WCAG AA compliant */
+
+  /* Borders — low-opacity hairlines, never heavy lines */
+  --color-border: 255 255 255;       /* used at /8 opacity */
+  --color-border-strong: 255 255 255; /* used at /14 opacity */
+
+  /* Brand — refined green, matured from #7cfc00 */
+  --color-brand: 74 222 128;      /* #4ADE80 */
+  --color-brand-hover: 34 197 94; /* #22C55E */
+  --color-brand-soft: 74 222 128; /* used at /10 for tints */
+  --color-brand-fg: 5 46 22;      /* #052E16 dark text on brand bg */
+
+  /* Accent — warm amber for ratings and highlights */
+  --color-accent: 251 191 36;     /* #FBBF24 */
+
+  /* Semantic */
+  --color-success: 74 222 128;
+  --color-danger: 248 113 113;
+}
+
+/* =========================================================
+   Base — calm, typographically correct, accessible defaults
+   ========================================================= */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
 }
 
-
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+html,
+body {
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-ink));
 }
 
-body{
-  background-color: #222;
-  color: #fff;
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
-.height{
-  max-height: calc(100vh - 6rem);
+/* Hairline border helper — single source of truth for low-opacity lines */
+.border-hairline {
+  border-color: rgb(var(--color-border) / 0.08);
+}
+.border-hairline-strong {
+  border-color: rgb(var(--color-border-strong) / 0.14);
 }
 
-.mohona{
-  font-family: "Zain", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+/* Typography refinements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin: 0;
 }
 
-.up{
-  transform: translateY(50%);
+p {
+  margin: 0;
 }
 
-.down{
-  transform: translateY(-50%);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-@layer base {
-  :root {
-    --radius: 0.5rem;
+button {
+  font-family: inherit;
+}
+
+/* =========================================================
+   Custom scrollbar — thin, brand-tinted, restrained
+   ========================================================= */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-bg));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-ink-subtle) / 0.4);
+  border-radius: 10px;
+  border: 2px solid rgb(var(--color-bg));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-brand) / 0.7);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--color-ink-subtle) / 0.4) rgb(var(--color-bg));
+}
+
+/* =========================================================
+   Selection — brand-colored, never jarring
+   ========================================================= */
+::selection {
+  background: rgb(var(--color-brand) / 0.3);
+  color: rgb(var(--color-ink));
+}
+
+/* =========================================================
+   Focus — visible, calm, brand-tinted
+   ========================================================= */
+*:focus-visible {
+  outline: 2px solid rgb(var(--color-brand));
+  outline-offset: 2px;
+  border-radius: 0.375rem;
+}
+
+/* =========================================================
+   Reduced motion — disable all non-essential animation
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   Component primitives — buttons, surfaces, utility helpers
+   ========================================================= */
+@layer components {
+  /* Primary CTA — the conversion anchor of the page */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+           px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base font-semibold
+           bg-brand text-brand-fg
+           transition-all duration-200 ease-elegant
+           hover:bg-brand-hover hover:-translate-y-0.5 hover:shadow-glow
+           active:translate-y-0 active:scale-[0.98];
+  }
+
+  /* Secondary / ghost CTA — paired with primary */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg
+           px-3 py-3 text-sm sm:px-6 sm:py-3.5 sm:text-base font-semibold
+           bg-transparent text-ink
+           border border-border-strong
+           transition-all duration-200 ease-elegant
+           hover:bg-surface-2 hover:border-ink-subtle;
+  }
+
+  /* Text link with animated underline */
+  .link-underline {
+    @apply relative inline-flex items-center gap-1.5 font-medium
+           text-ink transition-colors duration-200;
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 h-px w-full origin-left scale-x-0
+           bg-current transition-transform duration-300 ease-elegant;
+  }
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+
+  /* Section wrapper — consistent vertical rhythm */
+  .section {
+    @apply relative px-4 sm:px-6 md:px-12 py-section-sm md:py-section;
+  }
+  .section-container {
+    @apply mx-auto w-full max-w-7xl;
+  }
+
+  /* Card surface — quiet, hoverable */
+  .card-surface {
+    @apply rounded-xl border border-border bg-card
+           transition-all duration-300 ease-elegant;
+  }
+  .card-surface-hover {
+    @apply hover:border-border-strong hover:bg-card-hover hover:-translate-y-1;
+  }
+
+  /* Eyebrow tag — uppercase, tight tracking, brand-tinted */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-eyebrow uppercase text-brand;
+  }
+
+  /* Brand-soft pill — for tags, filters, status badges */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full
+           px-3 py-1 text-xs font-medium
+           bg-brand-soft text-ink border border-brand/20;
+  }
+
+  /* Stat chip — for the hero proof row */
+  .stat-chip {
+    @apply flex flex-col gap-0.5;
+  }
+
+  /* Gradient text — used sparingly on display headlines */
+  .text-gradient-brand {
+    background: linear-gradient(
+      135deg,
+      rgb(var(--color-ink)) 0%,
+      rgb(var(--color-ink-muted)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

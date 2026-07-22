@@ -59,7 +59,7 @@ export default async function BlogPage() {
   const regularPosts = posts.slice(1)
 
   return (
-    <div className="w-full min-h-screen bg-white text-[#222]">
+    <div className="w-full min-h-screen bg-bg text-ink">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="text-4xl font-bold mb-8 text-center"> <Link href="https://dev-saiful.me" className=" underline">Saiful's</Link> Blog</h1>
 
@@ -83,7 +83,7 @@ export default async function BlogPage() {
 
       <div>
         {
-          posts.length === 0 && <div className="h-full w-full flex justify-center items-center">No posts found.</div>
+          posts.length === 0 && <div className="h-full w-full flex justify-center items-center text-ink">No posts found.</div>
         }
       </div>
 
